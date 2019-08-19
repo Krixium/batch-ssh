@@ -69,6 +69,13 @@ case $1 in
         done
     ;;
 
+    "rst" )
+        for host in ${hosts[*]}
+        do
+            ssh root@192.168.0.$host "shutdown now" &
+        done
+    ;;
+
     "connect" )
         ssh root@192.168.0.$2
     ;;
